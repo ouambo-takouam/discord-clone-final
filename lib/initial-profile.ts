@@ -18,7 +18,7 @@ export async function initialProfile() {
     return profile;
   }
 
-  const created = await db.profile.create({
+  const newProfile = await db.profile.create({
     data: {
       userId: user.id,
       name: `${user.firstName} ${user.lastName}`,
@@ -27,5 +27,5 @@ export async function initialProfile() {
     },
   });
 
-  return created;
+  return newProfile;
 }
